@@ -4,6 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayukh & Bhaswati | Our Story Continues</title>
+
+    <!-- Open Graph / Elegant Link Preview Metadata -->
+<meta property="og:title" content="Mayukh & Bhaswati | Our Story Continues" />
+<meta property="og:description" content="We are exchanging rings! We would love to have your presence and blessings as we step into our forever." />
+<meta property="og:image" content="https://github.com/rimjhim97/Engagement-Invitation/blob/main/Gemini_Generated_Image_fljzz3fljzz3flj_preview.jpeg" />
+<meta property="og:url" content="https://rimjhim97.github.io/Engagement-Invitation/" />
+<meta property="og:type" content="website" />
+
+<!-- Twitter / iMessage Card Metadata -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Mayukh & Bhaswati | Our Story Continues" />
+<meta name="twitter:description" content="We are exchanging rings! We would love to have your presence and blessings as we step into our forever." />
+<meta name="twitter:image" content="https://github.com/rimjhim97/Engagement-Invitation/blob/main/Gemini_Generated_Image_fljzz3fljzz3flj_preview.jpeg" />
+
     <style>
         /* Elegant, Handcrafted Fonts */
         @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Montserrat:wght@300;400;600&family=Pinyon+Script&display=swap');
@@ -67,33 +81,86 @@
             z-index: 1;
             overflow: hidden;
         }
+        /* --- Scene Transition Overlay --- */
+.section::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 180px;
+    pointer-events: none;
+    z-index: 5;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(10,5,5,0) 0%,
+        rgba(10,5,5,0.15) 30%,
+        rgba(10,5,5,0.45) 65%,
+        rgba(10,5,5,0.9) 100%
+    );
+}
+        .section:last-of-type::after {
+    display: none;
+}
 
         /* --- Typography & Invisible Story Progression --- */
         .chapter-wrapper {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-bottom: 30px;
-        }
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 22px 34px;
+    background: rgba(10, 8, 8, 0.08);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
 
-        .chapter-title {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(0.7rem, 2vw, 0.85rem);
-            letter-spacing: clamp(6px, 2vw, 10px);
-            text-transform: uppercase;
-            color: var(--gold-light);
-            font-weight: 300;
-        }
+    border: 1px solid rgba(230,203,168,0.18);
+    border-radius: 18px;
 
-        .year-marker {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 0.85rem;
-            color: rgba(230, 203, 168, 0.5);
-            letter-spacing: 2px;
-            margin-top: 5px;
-            font-style: italic;
-        }
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.45),
+        inset 0 0 0 1px rgba(255,255,255,.04);
 
+    margin-bottom: 38px;
+}
+
+        .chapter-title{
+    font-family:'Montserrat',sans-serif;
+    font-size:0.8rem;
+    letter-spacing:12px;
+    text-transform:uppercase;
+
+    color:#F2DEC3;
+
+    font-weight:500;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.8);
+
+    margin-bottom:10px;
+}
+
+        .year-marker{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:1.2rem;
+    font-style:italic;
+
+    color:rgba(255,245,228,.92);
+
+    letter-spacing:1px;
+
+    text-shadow:
+        0 2px 10px rgba(0,0,0,.75);
+}
+.chapter-line{
+    width:65px;
+    height:1px;
+
+    background:rgba(230,203,168,.45);
+
+    margin:8px 0 12px;
+}
         .story-text {
             font-family: 'Cormorant Garamond', serif;
             font-size: clamp(1.4rem, 4.5vw, 2rem);
@@ -308,17 +375,32 @@
         }
 
         /* --- Cinematic Reveal Animations --- */
-        .anim-element {
-            opacity: 0;
-            transform: translateY(30px);
+        .anim-element{
+    opacity:0;
+    transform:translateY(45px) scale(.96);
             transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), transform 1.8s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .anim-element.visible { opacity: 1; transform: translateY(0); }
+       .anim-element.visible{
+    opacity:1;
+    transform:translateY(0) scale(1);
+}
 
         .delay-1 { transition-delay: 0.2s; }
         .delay-2 { transition-delay: 0.4s; }
         .delay-3 { transition-delay: 0.6s; }
         .delay-4 { transition-delay: 0.8s; }
+        /* --- Section Zoom Transition --- */
+.section {
+    transition: transform 1.4s ease;
+}
+
+.section.in-view {
+    transform: scale(1);
+}
+
+.section:not(.in-view) {
+    transform: scale(1.02);
+}
 
         /* --- Cinematic Dust Motes --- */
         .dust-mote {
@@ -341,19 +423,206 @@
     </style>
 </head>
 <body>
+    <!-- ========================================== -->
+    <!-- PREMIUM LANDING OVERLAY (ADD-ON)           -->
+    <!-- ========================================== -->
+    <style>
+        #landing-overlay {
+            position: fixed;
+            inset: 0; /* Shorthand for top:0; right:0; bottom:0; left:0; */
+            width: 100vw;
+            height: 100vh;
+            height: 100svh;
+            background-color: #0a0505;
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            /* Master transition for the entire overlay */
+            transition: opacity 1.8s cubic-bezier(0.25, 1, 0.5, 1), visibility 1.8s;
+        }
 
-<audio id="bgMusic" loop preload="auto">
+        /* Cinematic slow zoom background to match your base code */
+        #landing-bg {
+            position: absolute;
+            top: -10%; left: -10%; width: 120%; height: 120%;
+            background-image: linear-gradient(to bottom, rgba(20, 10, 10, 0.2), rgba(10, 5, 5, 0.95)), url('Gemini_Generated_Image_5x30wo5x30wo5x30.png');
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+            animation: slowZoom 35s linear infinite alternate;
+            /* Transition for the exit blur and scale effect */
+            transition: transform 1.8s cubic-bezier(0.25, 1, 0.5, 1), filter 1.8s ease;
+        }
+        @keyframes imageReveal {
+            100% { opacity: 1; }
+        }
+
+        #landing-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 1;
+            transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        #landing-overlay .sub-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(0.7rem, 2vw, 0.85rem);
+            letter-spacing: clamp(6px, 2vw, 10px);
+            text-transform: uppercase;
+            color: #e6cba8; 
+            font-weight: 300;
+            margin-bottom: 20px;
+            animation: fadeUpIn 2s ease forwards;
+            opacity: 0;
+        }
+
+        #landing-overlay h1 {
+            font-family: 'Pinyon Script', cursive;
+            color: #fdfbf7;
+            font-size: clamp(4rem, 12vw, 6.5rem);
+            line-height: 1;
+            margin-bottom: 15px;
+            font-weight: normal;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            animation: fadeUpIn 2.5s ease forwards 0.3s;
+            opacity: 0;
+        }
+
+        #landing-overlay p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+            font-style: italic;
+            color: rgba(253, 251, 247, 0.7);
+            letter-spacing: 2px;
+            margin-bottom: 55px;
+            animation: fadeUpIn 2.5s ease forwards 0.6s;
+            opacity: 0;
+        }
+
+        #enter-btn {
+            background: transparent;
+            border: 1px solid rgba(230, 203, 168, 0.4);
+            color: #e6cba8;
+            padding: 16px 42px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            font-weight: 400;
+            animation: fadeUpIn 2.5s ease forwards 0.9s;
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        /* Subtle light sweep on hover for the button */
+        #enter-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(230, 203, 168, 0.15), transparent);
+            transition: left 0.7s ease;
+        }
+        
+        #enter-btn:hover::before {
+            left: 100%;
+        }
+
+        #enter-btn:hover {
+            background: rgba(230, 203, 168, 0.08);
+            border-color: #e6cba8;
+            color: #fff;
+            box-shadow: 0 0 25px rgba(230, 203, 168, 0.15);
+        }
+
+        @keyframes fadeUpIn {
+            0% { opacity: 0; transform: translateY(25px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Exit Transition Classes --- */
+        .overlay-fade-out {
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+        
+        .overlay-fade-out #landing-bg {
+            transform: scale(1.15) !important;
+            filter: blur(12px) brightness(0.3);
+        }
+
+        .overlay-fade-out #landing-content {
+            opacity: 0;
+            transform: translateY(-30px) scale(0.96);
+        }
+    </style>
+
+    <div id="landing-overlay">
+        <div id="landing-bg"></div>
+        <div id="landing-content">
+            <div class="sub-heading">A Story Continues</div>
+            <h1>Mayukh & Bhaswati</h1>
+            <p>Turn on your sound & step inside...</p>
+            <button id="enter-btn">Begin Chapter One</button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('enter-btn').addEventListener('click', function() {
+            const overlay = document.getElementById('landing-overlay');
+            const bgMusic = document.getElementById('bgMusic');
+            
+            // 1. Ignite the audio engine immediately on interaction
+            if (bgMusic) {
+                bgMusic.play().catch(error => console.log("Audio play failed:", error));
+            }
+            
+            // 2. Trigger the high-end exit animation
+            overlay.classList.add('overlay-fade-out');
+            
+            // 3. Purge from DOM gracefully after animation completes
+            setTimeout(() => {
+                if (overlay.parentNode) {
+                    overlay.parentNode.removeChild(overlay);
+                }
+            }, 1800); // Matches the CSS transition time
+        });
+    </script>
+    <!-- ========================================== -->
+    <!-- END OF PREMIUM LANDING OVERLAY             -->
+    <!-- ========================================== -->
+
+    <!--<audio id="bgMusic" loop preload="auto">
+    <source src="love-song.mp3" type="audio/mpeg">
+</audio>-->
+    <audio
+    id="bgMusic"
+    preload="auto"
+    loop
+    playsinline
+    webkit-playsinline>
     <source src="love-song.mp3" type="audio/mpeg">
 </audio>
 
     <section class="section sec-1">
         <div class="bg-layer"></div>
-        <div class="chapter-wrapper anim-element">
+        <div class="chapter-wrapper anim-element" style="margin-top:-70px;">
             <h3 class="chapter-title">Chapter One</h3>
-            <span class="year-marker">2024</span>
+            <div class="chapter-line"></div>
+            <span class="year-marker">A City of Stars</span>
         </div>
         <p class="story-text anim-element delay-1">
-            "It started at SCMHRD.<br><br>Somewhere between the endless assignments, campus walks, and stolen moments between classes, we realized we weren't just navigating B-school together. We were navigating life."
+            It started at SCMHRD.<br><br>Somewhere between the endless assignments, campus walks, and stolen moments between classes, we realized we weren't just navigating B-school together. We were navigating life.
         </p>
         <div class="scroll-down">SCROLL ↓</div>
     </section>
@@ -361,9 +630,10 @@
     <section class="section sec-2" id="scene-2">
         <div class="bg-layer"></div>
         <div class="proposal-sparkle" id="sparkle"></div>
-        <div class="chapter-wrapper anim-element">
+        <div class="chapter-wrapper anim-element" style="margin-top:-70px;">
             <h3 class="chapter-title">Chapter Two</h3>
-            <span class="year-marker">2025</span>
+            <div class="chapter-line"></div>
+            <span class="year-marker">The Fools Who Dream</span>
         </div>
         <div class="climax-text anim-element delay-1">
             A carefully kept secret.<br><br>
@@ -378,7 +648,7 @@
             
             <span class="time-greeting" id="timeGreeting">Good Evening</span>
             <h2>You're Invited</h2>
-            <p class="cordial">Our story is finally coming home to Kolkata. We are exchanging rings, and we wouldn't dream of doing it without the people who watched us grow from classmates to this.</p>
+            <p class="cordial">Our story is finally coming home to Kolkata. As we exchange rings, we want to celebrate love alongside the ones who mean the world to us.</p>
             
             <div class="details-grid">
                 <div class="detail-item anim-element delay-1">
@@ -407,11 +677,11 @@
             </div>
 
             <p class="final-note anim-element delay-3">
-                We can't wait to make this promise official, surrounded by the people who have been rooting for us since day one.
+                We can't wait to make this promise official and spend the evening laughing, celebrating, and stepping into the future with you.
             </p>
             
             <div class="ps-note anim-element delay-4">
-                P.S. If you're reading this, you've been a part of our story. Thank you.
+                P.S. If you're reading this, we would love to have your presence and blessings as we step into our forever. Thank you.
             </div>
         </div>
     </section>
@@ -451,9 +721,8 @@ console.error("Audio couldn't start:", err);
 }
 }
         
-        window.addEventListener('scroll', startAudio, { once: true });
-        window.addEventListener('touchstart', startAudio, { once: true });
-        window.addEventListener('click', startAudio, { once: true });
+window.addEventListener('touchstart', startAudio, { once: true });
+window.addEventListener('scroll', startAudio, { once: true });
 
         // --- Smooth Scroll & Single Sparkle Observer ---
         let sparkleFired = false;
@@ -479,6 +748,30 @@ console.error("Audio couldn't start:", err);
         document.querySelectorAll('.anim-element').forEach(el => observer.observe(el));
         // Also observe scene-2 wrapper for the sparkle trigger
         observer.observe(document.getElementById('scene-2'));
+        // Observe elements for fade reveal
+document.querySelectorAll('.anim-element').forEach(el => observer.observe(el));
+
+// Also observe scene-2 wrapper for the sparkle trigger
+observer.observe(document.getElementById('scene-2'));
+
+/* --- Section Zoom Observer --- */
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        } else {
+            entry.target.classList.remove('in-view');
+        }
+    });
+}, {
+    threshold: 0.3
+});
+
+document.querySelectorAll('.section').forEach(section => {
+    sectionObserver.observe(section);
+});
+
+document.querySelector('.section')?.classList.add('in-view');
 
         // --- Generate .ics File for Calendar with Human Description ---
         document.getElementById('addToCalendar').addEventListener('click', function(e) {
